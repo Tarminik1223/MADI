@@ -1,5 +1,7 @@
 import random
 import numpy
+import timeit
+
 m = 50
 n = 50
 min_limit = -250
@@ -26,13 +28,16 @@ for i in range(m):
 print("Матрица сгенерирована: ")
 print(array)
 
-import timeit
-import random
-import numpy
-
 
 # Сортировка выбором
 def SelectionSort(arr):
+    """
+    1)Найти наименьшее значение в списке.
+    2)Записать его в начало списка, а первый элемент - на место, где раньше стоял наименьший.
+    3)Снова найти наименьший элемент в списке. При этом в поиске не участвует первый элемент.
+    4)Второй минимум поместить на второе место списка. Второй элемент при этом перемещается на освободившееся место.
+    5)Продолжать выполнять поиcк и обмен, пока не будет достигнут конец списка.
+    """
     new_array = arr.copy()
     for i in range(m):
         for j in range(n - 1):
@@ -48,6 +53,11 @@ def SelectionSort(arr):
 
 # Сортировка вставкой
 def InsertionSort(arr):
+    """
+    1)Перебираются элементы в неотсортированной части массива.
+    2)Каждый элемент вставляется в отсортированную часть массива на то место, где он должен находиться.
+
+    """
     array = arr.copy()
     for i in range(len(array)):
         for j in range(len(array[i])):
@@ -62,6 +72,12 @@ def InsertionSort(arr):
 
 # Сортировка обменом
 def BubbleSort(arr):
+    """
+    1)Попарно сравниваются элементы массива
+    2)Если элемент слева* больше элемента справа, то элементы меняются местами
+    3)Повторяем пункты 1-2 до тех пор, пока массив не отсортируется
+
+    """
     array = arr.copy()
     for i in range(len(array)):
         for j in range(len(array[i])):
@@ -73,7 +89,7 @@ def BubbleSort(arr):
     return array
 
 
-# Сортировка Шелла¶
+# Сортировка Шелла
 def ShellSort(arr):
     array = arr.copy()
     for i in range(len(array)):
