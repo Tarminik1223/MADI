@@ -21,9 +21,6 @@
 \setlength\fboxrule{1pt}            % Толщина линий рамки \fbox{}
 \usepackage{wrapfig}                % Обтекание рисунков и таблиц текстом
 
-%Заговолок
-
-
 
 \begin{document}
 \begin{flushleft}
@@ -121,31 +118,20 @@
 	$\sum\limits_{n=1}^{\infty} \frac{1}{n^2+n}$ сходится\\
 	$\Rightarrow$ ряд $\sum\limits_{n=1}^{\infty} \frac{(-1)^n}{n^2+n}$ сходится абсолютно
 	
+\newpage
 \section*{№8}
 	$\sum\limits_{n=2}^{\infty} \frac{(-1)^n}{nln^3n}$;
 	$a_n = \frac{1}{nln^3n}$\\
 	Проверим ряд на абсолютную сходимость:\\
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	$
+	\int\limits_2^\infty \frac{1}{xln^3x}dx = 
+	\int\limits_2^\infty \frac{d(lnx)}{ln^3x} =
+	\lim\limits_{b\to\infty} \left. {\frac{ln^{-2}x}{-2}} \right|_2^b =
+	-\frac{1}{2}\lim\limits_{b\to\infty} \left. {\frac{1}{ln^2x}} \right|_2^b =
+	-\frac{1}{2}\lim\limits_{b\to\infty} (\frac{1}{ln^2b}-\frac{1}{ln^22}) = 
+	\frac{1}{2}\cdot \frac{1}{ln^22} \in \mathbb{R}\\
+	$
+	$\Rightarrow$ по интегральному признаку Коши ряд $\sum\limits_{n=2}^{\infty} \frac{(-1)^n}{nln^3n}$ сходится абсолютно
 	
 	
 \end{document}
